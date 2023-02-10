@@ -4,9 +4,9 @@
     // Employee class take three properties Id, Name, DepartmentName 
     class Employee
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string DepartmentName { get; set; }
+        private int Id { get; set; }
+        private string Name { get; set; }
+        private string DepartmentName { get; set; }
 
 
         // Employee class  delegate  MethodCalledEventHandler and event MethodCalled
@@ -71,13 +71,33 @@
         {
             // take input 
             Console.WriteLine("Enter Employee id : ");
-            int id = Convert.ToInt32(Console.ReadLine());
+
+            int id;
+            while (!int.TryParse(Console.ReadLine(), out id))
+            {
+                Console.WriteLine("Sorry you Entered Wrong Input.. Try Again!! ");
+            }
+            //try
+            //{
+            //    id = Convert.ToInt32(Console.ReadLine());
+
+            //}
+            //catch (FormatException e)
+            //{
+            //    Console.WriteLine("Enter  please valid number ");
+            //    return;
+            //}
+
 
             Console.WriteLine("Enter Employee Name : ");
             var name = Console.ReadLine();
+           
+
+
 
             Console.WriteLine("Enter Employee DepartmentName : ");
-            var departmentName = Convert.ToString(Console.ReadLine());
+           
+             var departmentName = Convert.ToString(Console.ReadLine());
 
             // instance of the employee  
             Employee employee = new Employee(id, name, departmentName);
