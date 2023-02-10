@@ -56,10 +56,10 @@
         public void Update(string departmentName, int id = -1)
         {
             DepartmentName = departmentName;
-            //if (id != -1)
-            //{
-            //    Id = id;
-            //}
+            if (id != -1)
+            {
+                id = id;
+            }
         }
         protected virtual void OnMethodCalled(string message)
         {
