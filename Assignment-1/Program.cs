@@ -26,25 +26,25 @@
         // Get Method for all three Properties
         public int GetId()
         {
-            OnMethodCalled("GetId() method called!");
+            OnMethodCalled(" method call");
             return Id;
         }
 
         public string GetName()
         {
-            OnMethodCalled("GetName() method called!");
+            OnMethodCalled(" method call");
 
             return Name;
         }
 
         public string GetDepartmentName()
         {
-            OnMethodCalled("GetDepartmentName() method called!");
+            OnMethodCalled(" method call");
 
             return DepartmentName;
         }
          
-        // up        
+        // update the three method        
         public void Update(int id)
         {
             Id = id;
@@ -56,10 +56,10 @@
         public void Update(string departmentName, int id = -1)
         {
             DepartmentName = departmentName;
-            if (id != -1)
-            {
-                Id = id;
-            }
+            //if (id != -1)
+            //{
+            //    Id = id;
+            //}
         }
         protected virtual void OnMethodCalled(string message)
         {
